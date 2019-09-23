@@ -8,7 +8,8 @@
 		Name:      ${info.name}
 		Semester:  ${info.semester}
 		Marks:     ${info.marks}
-	 
+	 <hr>
+	 <a href="index.jsp">Home</a>
 	
 </body>
 </html>

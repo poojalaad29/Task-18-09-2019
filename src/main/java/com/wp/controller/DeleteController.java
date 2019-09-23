@@ -13,18 +13,17 @@ import com.wp.model.Student;
 
 @Controller
 public class DeleteController {
-		@RequestMapping("deletecontroller")
-		public ModelAndView Delete(@ModelAttribute("info") Student stu){
-			Configuration config=new Configuration().configure();
-			SessionFactory sf=config.buildSessionFactory();
-			Session session=sf.openSession();
-			Transaction tr=session.beginTransaction();
-					session.delete(stu);
-					tr.commit();
+		
+	@RequestMapping("deletecontroller")
+	public ModelAndView Delete(@ModelAttribute("info") Student stu) {
+		Configuration config = new Configuration().configure();
+		SessionFactory sf = config.buildSessionFactory();
+		Session session = sf.openSession();
+		Transaction tr = session.beginTransaction();
+		session.delete(stu);
+		tr.commit();
+		ModelAndView mv = new ModelAndView("ShowDelete");
+		return mv;
 
-			ModelAndView mv=new ModelAndView("ShowDelete");
-			return mv;
-			
-
-		}
+	}
 }
